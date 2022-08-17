@@ -1,7 +1,7 @@
 
 FROM golang:1.19.0-alpine3.16 as builder
 RUN apk update && apk upgrade && apk add git
-RUN git clone https://github.com/Ignalina/thund-cli.git && cd thund-cli && go build
+RUN git clone --depth 1 --branch v0.1.0  https://github.com/Ignalina/thund-cli.git && cd thund-cli && go build
 
 FROM python:3.10.6-alpine3.16
 COPY --from=builder /go/thund-cli/thund-cli /
