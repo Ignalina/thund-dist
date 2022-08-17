@@ -1,4 +1,4 @@
 FROM golang:1.19.0-alpine3.16
 RUN apk update && apk upgrade && apk add git apache-arrow
-RUN git clone --depth 1 --branch v0.1.0  https://github.com/Ignalina/thund-cli.git && cd thund-cli && go build
+RUN git clone --depth 1 --branch v0.1.1  https://github.com/Ignalina/thund-cli.git && cd thund-cli && go build
 CMD /go/thund-cli/thund-cli streamcmd .
