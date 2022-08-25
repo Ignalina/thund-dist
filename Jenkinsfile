@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'docker build -f docker/alpine/unchained/Dockerfile .'
+        sh 'podman build -f docker/alpine/unchained/Dockerfile .'
       }
     }
 
